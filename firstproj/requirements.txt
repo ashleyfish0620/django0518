@@ -1,0 +1,6 @@
+django
+django-allauth
+django-widget-tweaks
+
+pillow
+django-simple-captcha

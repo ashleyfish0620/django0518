@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}顯示所有資料{% endblock %}
+{% block content %}
+
+		<h2>顯示 student 資料表所有資料</h2>
+		<table class="table table-striped">
+			<thead>
+				<th scope="col">編號</th>
+				<th scope="col">姓名</th>
+				<th scope="col">學號</th>
+				<th scope="col">性別</th>
+				<th scope="col">生日</th>
+				<th scope="col">郵件帳號</th>
+				<th scope="col">電話</th>
+				<th scope="col">地址</th>
+				<th scope="col"></th>
+				<th scope="col"></th>
+			</thead>
+			<tbody>
+			{% for student in allStudents %}
+				<tr scope="row">
+					<td>{{ student.id }} </td>
+					<td>{{ student.stdName }} </td>
+					<td>{{ student.stdID }} </td>
+					<td>{{ student.stdSex}} </td>
+					<td>{{ student.stdBirth }} </td>
+					<td>{{ student.stdEmail }} </td>
+					<td>{{ student.stdPhone}} </td>
+					<td>{{ student.stdAddress }} </td>
+					<td><a href="/edit/{{student.stdID}}/"><button type="button" class="btn btn-outline-info">編輯</button></a></td>
+					<td><a href="/delete/{{student.stdID}}/"><button type="button" class="btn btn-outline-danger">刪除</button></a></td>
+				</tr>
+			{% endfor %}
+			<tbody>
+			<th colspan="10" align="center">
+				<a class="dropdown-item" href="/post1/"><button type="button" class="btn btn-info btn-lg btn-block">新增資料</button></a>
+			</th>
+		</table>
+{% endblock %}

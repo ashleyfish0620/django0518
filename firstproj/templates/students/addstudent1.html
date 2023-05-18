@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}資料表新增{% endblock %}
+{% block content %}
+
+  <h2>student 資料表新增</h2>
+  <form action="." method="POST" name="form1">
+    {% csrf_token %}
+    <table class="table table-borderless">
+      <tr>                                                <!--變數名稱-->
+        <th>姓名</th><td ><input type="text" id="stdName" name="stdName"/></td>
+      </tr>
+      <tr>
+        <th>學號</th><td ><input type="text" id="stdID" name="stdID"/></td>
+      </tr>
+      <tr>
+        <th>性別</th>
+        <td>
+          <input name="stdSex" type="radio" id="stdSex1" value="M" checked="checked" />
+          男生
+          <input name="stdSex" type="radio" id="stdSex2" value="F"/>
+          女生
+        </td>
+      </tr>
+       <tr>
+        <th>生日</th><td><input type="text" id="stdBirth" name="stdBirth"/></td>
+      </tr>
+      <tr>
+        <th>郵件帳號</th><td><input type="text" id="stdEmail" name="stdEmail"/></td>
+      </tr>
+      <tr><th>電話</th><td ><input type="text" id="stdPhone" name="stdPhone"/></td>
+      </tr>
+      <tr>
+        <th>地址</th><td ><input type="text" id="stdAddress" name="stdAddress"/></td>
+      </tr>
+      <tr>
+        <th colspan="2" align="center">
+          <button type="submit" class="btn btn-primary" name="button" id="button" value="送出">送出</button>
+          <button type="reset" class="btn btn-primary" name="button2" id="button2" value="重設">重設</button>
+        </th>
+      </tr>
+    </table>
+    <span style="color:red">{{mess}}</span>
+  </form>
+{% endblock %}

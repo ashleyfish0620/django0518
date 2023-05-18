@@ -1,0 +1,20 @@
+<html>
+   <head>
+      {% load static %}
+      <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+   </head>
+   <body>
+      <h2>
+         {% for std in stds reversed%}
+            <h2>第{{forloop.revcounter}}學生</h2>
+            <ul>
+               <li>姓名：{{std.name}}</li>
+               <li>學號：{{std.sid}}</li>
+               <li>年齡：{{std.age}}</li>
+            </ul>
+         {% empty %}
+            沒有任何資料
+         {% endfor %}
+      </h2>
+   </body>
+</html>
